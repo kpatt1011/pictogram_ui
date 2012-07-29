@@ -1,0 +1,97 @@
+﻿/*Login Page Style*/
+.login_button 
+{
+    width:20%;
+    height:25px;
+}
+
+#login_box 
+{
+    text-align:center;
+}
+
+#username_input 
+{
+    width:20%;
+}
+
+#password_input 
+{
+    width:20%;
+}
+
+/*Creation Page Style*/
+.assign_button 
+{
+   
+}
+
+#phrase_display_box
+{
+    text-align:center;    
+
+}
+
+.upload_image_box
+{
+    height:40px;
+    width:15%;
+}
+
+.thumbnail
+{
+    border-width: 5px;
+    border-style: dashed;
+    border-color: rgba(20, 126, 239, 0.50);
+    margin:10px;
+}
+
+.search_button
+{
+    width:100px;
+    height:25px;
+    background-color:Blue;
+    color:White;
+}
+
+#dropzone
+{
+    text-align:center;
+    float:right;
+    width:50%;
+    height:500px;
+}
+
+.thumbnail_display 
+{
+    text-align:center;
+    margin:0 px auto;
+    
+  
+}
+
+#current_image
+{
+ 
+}
+
+#current_image_box
+{
+  text-align:center;
+  float:left;
+   border:10px indent outset;
+}
+
+/* Home Page Style*/
+
+#introduction 
+{
+    padding-left:10%;
+    padding-right:10%;
+}
+
+#new_game_box
+{
+    padding-left:20%;
+    padding-right:20%;
+}
