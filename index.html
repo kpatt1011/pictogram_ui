@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+
+
+<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Picture That!</title>
+        <link rel="stylesheet" href="picture_that.css" />
+		<link rel="stylesheet" href="themes/picture_this.min.css" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile.structure-1.1.1.min.css" />
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript"  src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+
+       <!--Probably should delete this copy of kineticjs on the server -->
+       <!-- <script type="text/javascript"  src="kineticjs.js"></script>--> 
+       <script type="text/javascript" src="http://www.html5canvastutorials.com/libraries/kinetic-v3.10.4.js"></script>
+
+
+</head>
+
+
+<body>
+
+<div data-role="page" id="start_page" data-theme="a" data-transition="flow" data-title="Picture That!"> 
+    <div data-role="header">
+        <h1>Picture That!</h1>
+    </div> <!--Header-->
+
+    <div data-role="content"> 
+
+
+           <div class="login_button">
+                <label for"sign_up">New User?</label>
+                <input type="button" id="sign_up" value="Sign Up" />
+            </div> <!--Sign Up Button-->
+
+        <br />
+        <br />
+        <br />
+
+        <div class="login_button">
+                <label for="login_start">Returning User?</label>
+                <input type="button" id="login_start" value="Login" />
+            </div> <!--Login Button-->
+      
+         <br />
+         <br />
+
+        
+
+     
+    
+    
+    </div>  <!--Content-->
+
+      <div data-role="footer">
+                <h4>Copyright Picture That! LLC.</h4>
+        </div><!-- Footer -->
+
+
+
+
+
+
+</div> <!--Start Page-->
+
+<div data-role="dialog" data-transition="pop" id="login_page" data-theme="a" data-title="User Login"> 
+
+         <br />
+     
+         <div data-role="fieldcontain">
+                
+                    <label for="username">Username</label>
+                    <input type="text" value="" placeholder="Username" id="username" /> 
+
+        </div> <!--End of username field-->
+
+        <div data-role="fieldcontain">
+
+         
+                <label for="password">Password</label>
+                <input type="password" value="" placeholder="Password" id="password" />
+           
+
+        </div> <!--End of password field -->
+
+        <div data-role="fieldcontain">
+
+                <div class="login_button">
+                    <input type="button" id="login" value="Login"/>
+                </div> <!--Login Button-->
+
+        </div>
+
+        <br />
+
+</div> <!--Login Dialouge Window (Pop Up)-->
+
+<div data-role="dialog" data-transition="pop" id="sign_up_page" data-theme="a" data-title="Sign Up"> 
+
+  
+          
+                <label for="desired_username">Desired Username</label>
+                <input type="text" id="desired_username" />
+           
+
+           
+                <label for="email">Email</label>
+                <input type="text" id="email" />
+            
+
+            
+                <label for="desired_password">Password</label>
+                <input type="password" id="desired_password" />
+
+                <label for="repeat_password">Repeat Password</label>
+                <input type="password" id="repeat_password" />
+           
+
+            <br />
+            <input type="button" id="sign_up_submit" inline="true" data-icon="check" data-iconpos="left" value="Submit" /> 
+       
+
+
+</div> <!--Sign Up Dialouge Window (Pop Up) -->
+
+<div data-role="page" id="home_page" data-theme="a" data-title="Home" data-transition="flow"> 
+
+     <div data-role="header">
+        <h1>Picture That!</h1>
+        <a href="#settings_page" data-icon="gear" data-role="button">Settings</a>
+        <div data-role="navbar" data-iconpos="left">
+		<ul>
+			<li><a href="#home_page" data-role="button" data-icon="home">Home</a></li>
+            <li><a data-role="button" href="#user_search_page">New Game</a></li>
+            <li><a href="#creation_page" data-role="button" >Create Puzzle</a></li>
+            <li><a href="#" data-role="button">Current Games</a></li>
+			<li><a href="#" data-role="button">Picto-Feed</a></li>
+            
+		</ul>
+        </div> <!--Nabar-->
+      </div> <!--Header-->
+
+     <div data-role="content"> 
+
+        <div id="introduction">
+        <p style="text-align:center;"><b>Welcome to <i>Picture That!</i></b> <br/><br />
+        Picture That! brings the wit and hilarity of pictograms to life by having you define the pictogram with pictures of your choosing! 
+        Think your creative enough to take no more than four pictures to get grandma to guess the phrase "You only live once"? 
+        Just by playing you are guaranteed more laughs than you can handle, and maybe some bragging rights (if you're lucky).
+        <br />
+        <br />
+        So jump right in by inviting your friends to a game now!
+          </p>
+        </div>
+
+        <br />
+    
+      
+
+     </div> <!-- Content-->
+
+    
+
+
+      <div data-role="footer">
+                <h4>Copyright Picture That! LLC.</h4>
+        </div><!-- /footer -->
+
+</div> <!--Home Page-->
+
+<div data-role="page" id="creation_page" data-theme="a" data-transition="flow" data-title="Create!"> 
+
+       <div data-role="header">
+        <h1>Picture That!</h1>
+        <a href="#settings_page" data-icon="gear" data-role="button">Settings</a>
+        <div data-role="navbar" data-iconpos="left">
+		<ul>
+			<li><a href="#home_page" data-role="button" data-icon="home">Home</a></li>
+            <li><a data-role="button" href="#user_search_page">New Game</a></li>
+            <li><a href="#creation_page" data-role="button" >Create Puzzle</a></li>
+            <li><a href="#" data-role="button">Current Games</a></li>
+			<li><a href="#" data-role="button">Picto-Feed</a></li>
+            
+		</ul>
+        </div> <!--Nabar-->
+      </div> <!--Header-->
+ 
+        <div data-role="content">       
+
+                <div id="phrase_display_box">
+                        <p style="font-size:35px;"><b>Your Choosen Phrase is:</b><br/>
+                        <font style= "text-align:center; font-size:20px;;"><u>  Don't  </u> <u>  Stop  </u> <u>  Believing  </u></font></p>
+                        
+                </div>
+
+                
+                                <div id="creation_canvas"></div>
+                     
+
+                
+
+                <div class="ui-grid-b">
+	                <div class="ui-block-a">
+                        <a href="#image_upload_window" data-icon="plus" data-role="button"  id="add_image_button">Add Image</a>
+                    </div>
+
+	                <div class="ui-block-b">
+                        <a href="#text_upload_window" data-icon="plus"  data-role="button" id="add_text_button">Add Text</a>
+                    </div>
+
+                     <div class="ui-block-c">
+                            <a href="#symbol_upload_window" data-icon="plus"  data-role="button" id="add_symbol_button">Add Symbol</a>
+                    </div>
+                </div><!-- /grid-a -->
+              
+
+                 <br />
+
+
+           <br />
+           <br />
+                         
+        </div><!-- /content -->
+ 
+        <div data-role="footer">
+                <h4>Copyright Picture That! LLC.</h4>
+        </div><!-- /footer -->
+
+
+</div> <!--Creation Page-->
+
+<div data-role="dialog" data-transition="pop" id="user_search_page" data-theme="a" data-title="User Search"> 
+
+   
+
+                <div id="user_entry">
+                    <p>Opponents Username</p>
+                    <input type="text" id="user_to_search" />
+                </div> <!--User to search-->
+
+                <div >
+                    <input type="button" id="user_search_button" value="Search" />
+                </div> <!--Search Button-->
+
+
+</div> <!--User Search Dialouge Window (Pop Up)-->
+
+<div data-role="dialog" data-transition="pop" id="image_upload_window" data-theme="a" data-title="Upload Image"> 
+
+   
+
+           
+                <p style="text-align:left;"><b>Enter the URL of an internet image</b></p>
+                <input type="text" id="url"  value=""/> 
+              
+                <input type="button"  id="upload_image_button" value="Upload" />
+
+          
+
+</div> <!--Image Upload Window (Pop Up)-->
+
+<div data-role="dialog" data-transition="pop" id="text_upload_window" data-theme="a" data-title="Upload Text"> 
+
+  
+                <p style="text-align:left;"><b>Enter Text</b></p>
+
+                <input type="text" id="component_text" />
+              
+                <input type="button"  id="upload_text" value="Upload" />
+
+          
+
+</div> <!--Text Upload Window (Pop Up)-->
+
+<div data-role="dialog" data-transition="pop" id="symbol_upload_window" data-theme="a" data-title="Upload Symbol"> 
+
+            
+                <h3 style="text-align:center; padding-top:2px;">Choose Symbol</h3>
+            
+                <div class="ui-grid-a">
+	                <div class="ui-block-a">
+                        <div data-role="controlgroup">
+                            <a id="equals" data-role="button">=</a>
+                            <a id="carrot" data-role="button">^</a>
+                            <a id="and" data-role="button">&</a>
+                            <a id="at_sign" data-role="button">@</a>
+                            <a id="pound_sign" data-role="button">#</a>
+                            <a id="less_than" data-role="button"><</a>
+                        </div> <!--Control Group-->
+                    </div> <!--Block A-->
+
+                    <div class="ui-block-b">
+
+                          <div data-role="controlgroup">
+                            <a id="exclmation_point" data-role="button">!</a>
+                            <a id="question_mark" data-role="button">?</a>
+                            <a id="plus" data-role="button">+</a>
+                            <a id="minus" data-role="button">-</a>
+                            <a id="slash" data-role="button">/</a>
+                            <a id="greater_than" data-role="button">></a>
+                        </div> <!--Control Group-->
+
+                    </div> <!--Block B-->
+
+                </div> <!-- End UI Grid-->
+
+              
+                   
+                    
+              
+
+          
+
+</div> <!--Symbol Upload Window (Pop Up)-->
+
+<div data-role="page" id="settings_page" data-theme="a" data-transition="flow" data-title="Settings"> 
+
+            
+        <div data-role="header">
+        <h1>Picture That!</h1>
+        <a href="#settings_page" data-icon="gear" data-role="button">Settings</a>
+        <div data-role="navbar" data-iconpos="left">
+		<ul>
+			<li><a href="#home_page" data-role="button" data-icon="home">Home</a></li>
+            <li><a data-role="button" href="#user_search_page">New Game</a></li>
+            <li><a href="#creation_page" data-role="button" >Create Puzzle</a></li>
+            <li><a href="#" data-role="button">Current Games</a></li>
+			<li><a href="#" data-role="button">Picto-Feed</a></li>
+            
+		</ul>
+        </div> <!--Nabar-->
+      </div> <!--Header-->
+              
+ <div data-role="content">  
+            <label for="flip-1">Select slider:</label>
+            <select name="flip-1" id="flip-1" data-role="slider">
+	            <option value="off">Off</option>
+	            <option value="on">On</option>
+            </select>   
+            <br />
+            <label for="slider-1">Input slider:</label>
+    <input type="range" name="slider-1" id="slider-1" value="60" min="0" max="100" />
+    <br />
+    <fieldset data-role="controlgroup" data-mini="true">
+    	<input type="radio" name="radio-mini" id="radio-mini-1" value="choice-1" checked="checked" />
+    	<label for="radio-mini-1">Credit</label>
+
+	<input type="radio" name="radio-mini" id="radio-mini-2" value="choice-2"  />
+    	<label for="radio-mini-2">Debit</label>
+    	
+    	<input type="radio" name="radio-mini" id="radio-mini-3" value="choice-3"  />
+    	<label for="radio-mini-3">Cash</label>
+</fieldset>
+<br />
+
+<label><input type="checkbox" name="checkbox-0" /> I agree </label>
+			
+<input type="checkbox" name="checkbox-1" id="checkbox-1" class="custom" />
+<label for="checkbox-1">I agree</label>
+
+</div><!-- /content -->
+              
+
+           <div data-role="footer">
+                <h4>Copyright Picture That! LLC.</h4>
+        </div><!-- /footer -->
+
+</div> <!--Settings Page-->
+
+
+
+
+</body>
+
+<script type="text/javascript" src="test_script2.js"></script>
+ <script type="text/javascript" src="creation_canvas.js"></script>
+
+</html>
