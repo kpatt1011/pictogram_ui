@@ -1,19 +1,19 @@
-﻿/*Login Page Style*/
+﻿
+/*Login Page Style*/
 .login_button 
 {
     width:20%;
     height:25px;
+    margin-left:10%;
+    margin-right:10%;
 }
 
 #login_box 
 {
     text-align:center;
+    
 }
 
-#username_input 
-{
-    width:20%;
-}
 
 #password_input 
 {
@@ -21,6 +21,13 @@
 }
 
 /*Creation Page Style*/
+
+#creation_canvas 
+{
+    border-width: 5px;
+    border-style: outset;
+    border-color: rgba(20, 126, 239, 0.50);
+}
 .assign_button 
 {
    
@@ -46,6 +53,8 @@
     margin:10px;
 }
 
+
+
 .search_button
 {
     width:100px;
@@ -70,9 +79,16 @@
   
 }
 
-#current_image
+#upload_image_button 
 {
- 
+    width:50%;
+    height:30px;
+}
+
+#url 
+{
+    width:75%;
+    height:30px;
 }
 
 #current_image_box

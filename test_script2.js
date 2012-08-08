@@ -1,10 +1,4 @@
-
-
-
-
-
-
-
+/*----------------------------------------------------------------------------------------*/
 
 
 
@@ -13,116 +7,10 @@
 
 /*Creation Page*/
 
-/* Variables */
-
-var current_image_url; // URL of the image displayed as current image
-
-/* Methods */
-
-/* Updates the current picture that's been uploaded, but not yet given a spot in the pictogram*/
-function update_current_image() {
-
-   
-     current_image_url = $('#url').val(); // Stored image url
-  
-
-    var current = document.getElementById("current_image"); // Define the canvas from the main dispaly
-    var context = current.getContext('2d'); // Set 2d context for canvas
-
-    var image = new Image(); // Creates a new html image object
-    image.src = current_image_url; // Takes contents of image url box and makes in the src for the image in box 1
 
 
-    image.onload = function () {
-        if (image.height <= 300 && image.width <= 300) {
-            current.height = image.height;
-            current.width = image.width;
-            context.drawImage(image, 0, 0);
-        }
-        else {
-            var h = image.height / (image.height / 300);
-            var w = image.width / (image.width / 300);
-            current.height = h;
-            current.width = w;
-            context.drawImage(image, 0, 0, w, h);
-        }
 
 
-        localStorage.setItem("savedImageData", current.toDataURL("image/png"));
-    }
-}
-
-/* Takes a parameter (picture) used to update one of the pictures in the pictogram*/
-function assign_picture(picture) {
-
-    var location = current_image_url; //  URL of the current image
-
-    var picture = document.getElementById(picture); // Define the canvas from the main dispaly
-    var context = picture.getContext('2d'); // Set 2d context for canvas
-
-    var image = new Image(); // Creates a new html image object
-    image.src = location; // Takes contents of image url box and makes in the src for the image in box 1
-
-
-    image.onload = function () {
-        context.drawImage(image, 0, 0, 100, 100);
-        localStorage.setItem("savedImageData", picture.toDataURL("image/png"));
-    }
-
-}
-
-/* Clears the url bar to a blank string */
-function clear_url() {
-    $('#url').val(""); // Changes the value of the url input to a blank string
-}
-
-
-/* Events*/
-
-/*1st thumbnail pressed*/
-$('#picture1').click(function () {
-    assign_picture("picture1");
-});
-
-/*1st thumbnail pressed*/
-$('#assign1_button').click(function () {
-    assign_picture("picture1");
-});
-
-/*2nd thumbnail pressed*/
-$('#picture2').click(function () {
-    assign_picture("picture2");
-});
-
-/*2nd assignment button pressed*/
-$('#assign2_button').click(function () {
-    assign_picture("picture2");
-});
-
-/*3rd thumbnail pressed*/
-$('#picture3').click(function () {
-    assign_picture("picture3");
-});
-/*3rd assignment button pressed*/
-$('#assign3_button').click(function () {
-    assign_picture("picture3");
-});
-
-
-/*Image Upload button presset*/
-$('#upload_image_button').click(function () {
-    update_current_image();
-    clear_url();
-});
-
-
-/*
-    This function was used as pretty lame attempt a drag and drop image system
-$('#url').mouseover(function () {
-update_current_image();
-clear_url();
-});
-*/
 
 
 /*----------------------------------------------------------------------------------------*/
