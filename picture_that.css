@@ -1,4 +1,35 @@
-﻿
+﻿/*.content-primary {
+		width: 45%;
+		float: right;
+		margin-top: 30px;
+		margin-right: 1%;
+		padding-right: 1%;
+	}
+*/
+.content-secondary {
+		text-align: left;
+		float: left;
+		width: 15%;
+		background: none;
+	}
+	.content-secondary,
+	.type-interior .content-secondary {
+		margin: 30px 0 20px 2%;
+		padding: 20px 4% 0 0;
+			background: none;
+					border-top: none;
+	}
+	
+	.content-primary {
+		width: 75%;
+		float: right;
+		/*margin-top: 10px;*/
+		margin-right: 1%;
+		padding-right: 1%;
+	}
+	
+
+
 /*Login Page Style*/
 .login_button 
 {
@@ -22,21 +53,17 @@
 
 /*Creation Page Style*/
 
-#creation_canvas 
+ #creation_canvas 
 {
     border-width: 5px;
     border-style: outset;
     border-color: rgba(20, 126, 239, 0.50);
-}
-.assign_button 
-{
-   
+    background:white;
 }
 
 #phrase_display_box
 {
     text-align:center;    
-
 }
 
 .upload_image_box
@@ -45,15 +72,6 @@
     width:15%;
 }
 
-.thumbnail
-{
-    border-width: 5px;
-    border-style: dashed;
-    border-color: rgba(20, 126, 239, 0.50);
-    margin:10px;
-}
-
-
 
 .search_button
 {
@@ -61,14 +79,6 @@
     height:25px;
     background-color:Blue;
     color:White;
-}
-
-#dropzone
-{
-    text-align:center;
-    float:right;
-    width:50%;
-    height:500px;
 }
 
 .thumbnail_display 

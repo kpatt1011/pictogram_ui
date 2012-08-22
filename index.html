@@ -7,6 +7,7 @@
 
 <meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+
 		<title>Picture That!</title>
         <link rel="stylesheet" href="picture_that.css" />
 		<link rel="stylesheet" href="themes/picture_this.min.css" />
@@ -25,6 +26,7 @@
 <body>
 
 <div data-role="page" id="start_page" data-theme="a" data-transition="flow" data-title="Picture That!"> 
+
     <div data-role="header">
         <h1>Picture That!</h1>
     </div> <!--Header-->
@@ -69,6 +71,9 @@
 
 <div data-role="dialog" data-transition="pop" id="login_page" data-theme="a" data-title="User Login"> 
 
+      
+
+
          <br />
      
          <div data-role="fieldcontain">
@@ -100,7 +105,9 @@
 </div> <!--Login Dialouge Window (Pop Up)-->
 
 <div data-role="dialog" data-transition="pop" id="sign_up_page" data-theme="a" data-title="Sign Up"> 
-
+ 
+ 
+          
   
           
                 <label for="desired_username">Desired Username</label>
@@ -129,16 +136,16 @@
 
 <div data-role="page" id="home_page" data-theme="a" data-title="Home" data-transition="flow"> 
 
-     <div data-role="header">
+     <div data-role="header" data-id="head_navigation" data-position="fixed" >
         <h1>Picture That!</h1>
         <a href="#settings_page" data-icon="gear" data-role="button">Settings</a>
-        <div data-role="navbar" data-iconpos="left">
+        <div data-role="navbar" data-iconpos="left" >
 		<ul>
-			<li><a href="#home_page" data-role="button" data-icon="home">Home</a></li>
-            <li><a data-role="button" href="#user_search_page">New Game</a></li>
-            <li><a href="#creation_page" data-role="button" >Create Puzzle</a></li>
-            <li><a href="#" data-role="button">Current Games</a></li>
-			<li><a href="#" data-role="button">Picto-Feed</a></li>
+			<li><a class="ui-btn-active ui-state-persist" href="#home_page" data-role="button" data-icon="home">Home</a></li>
+            <li><a class="ui-btn-active ui-state-persist" data-role="button" href="#user_search_page">New Game</a></li>
+            <li><a class="ui-btn-active ui-state-persist" href="#creation_page" data-role="button" >Create Puzzle</a></li>
+            <li><a class="ui-btn-active ui-state-persist" href="#" data-role="button">Current Games</a></li>
+			<li><a class="ui-btn-active ui-state-persist" href="#" data-role="button">Picto-Feed</a></li>
             
 		</ul>
         </div> <!--Nabar-->
@@ -174,16 +181,16 @@
 
 <div data-role="page" id="creation_page" data-theme="a" data-transition="flow" data-title="Create!"> 
 
-       <div data-role="header">
+        <div data-role="header" data-id="head_navigation" data-position="fixed" >
         <h1>Picture That!</h1>
         <a href="#settings_page" data-icon="gear" data-role="button">Settings</a>
-        <div data-role="navbar" data-iconpos="left">
+        <div data-role="navbar" data-iconpos="left" >
 		<ul>
-			<li><a href="#home_page" data-role="button" data-icon="home">Home</a></li>
-            <li><a data-role="button" href="#user_search_page">New Game</a></li>
-            <li><a href="#creation_page" data-role="button" >Create Puzzle</a></li>
-            <li><a href="#" data-role="button">Current Games</a></li>
-			<li><a href="#" data-role="button">Picto-Feed</a></li>
+			<li><a class="ui-btn-active ui-state-persist" href="#home_page" data-role="button" data-icon="home">Home</a></li>
+            <li><a class="ui-btn-active ui-state-persist" data-role="button" href="#user_search_page">New Game</a></li>
+            <li><a class="ui-btn-active ui-state-persist" href="#creation_page" data-role="button" >Create Puzzle</a></li>
+            <li><a class="ui-btn-active ui-state-persist" href="#" data-role="button">Current Games</a></li>
+			<li><a class="ui-btn-active ui-state-persist" href="#" data-role="button">Picto-Feed</a></li>
             
 		</ul>
         </div> <!--Nabar-->
@@ -191,38 +198,45 @@
  
         <div data-role="content">       
 
-                <div id="phrase_display_box">
-                        <p style="font-size:35px;"><b>Your Choosen Phrase is:</b><br/>
-                        <font style= "text-align:center; font-size:20px;;"><u>  Don't  </u> <u>  Stop  </u> <u>  Believing  </u></font></p>
-                        
-                </div>
+        
+      
 
-                
-                                <div id="creation_canvas"></div>
-                     
+         
 
-                
+            
 
-                <div class="ui-grid-b">
-	                <div class="ui-block-a">
-                        <a href="#image_upload_window" data-icon="plus" data-role="button"  id="add_image_button">Add Image</a>
-                    </div>
+           
 
-	                <div class="ui-block-b">
-                        <a href="#text_upload_window" data-icon="plus"  data-role="button" id="add_text_button">Add Text</a>
-                    </div>
+                     <!--    <ul data-role="listview" data-theme="a">
+	                <li data-icon="plus">
+                        <a href="#image_upload_window" data-icon="plus"  id="add_image_button">Add Image</a>
+                    </li>
 
-                     <div class="ui-block-c">
-                            <a href="#symbol_upload_window" data-icon="plus"  data-role="button" id="add_symbol_button">Add Symbol</a>
-                    </div>
-                </div><!-- /grid-a -->
+	                <li data-icon="plus">
+                        <a href="#text_upload_window"  id="add_text_button">Add Text</a>
+                    </li>
+
+                     <li data-icon="plus">
+                            <a href="#symbol_upload_window" data-icon="plus"  id="add_symbol_button">Add Symbol</a>
+                    </li>
+                    <li data-icon="delete">
+                            <a href="" data-icon=""  id="erase_canvas">Clear Puzzle</a>
+                    </li>
+
+                    <li data-icon="star">
+                        <a id="save_image">Save Puzzle</a>
+                    </li>
+                    
+                    <li data-icon="info">
+                        <a id="load_image">Load Puzzle</a>
+                    </li>
+                 </ul>-->
               
 
-                 <br />
-
-
-           <br />
-           <br />
+	          
+               <div id="creation_canvas"></div>  <!--Canvas Used for Primary Game Display-->
+         
+       
                          
         </div><!-- /content -->
  
@@ -234,8 +248,6 @@
 </div> <!--Creation Page-->
 
 <div data-role="dialog" data-transition="pop" id="user_search_page" data-theme="a" data-title="User Search"> 
-
-   
 
                 <div id="user_entry">
                     <p>Opponents Username</p>
@@ -251,13 +263,33 @@
 
 <div data-role="dialog" data-transition="pop" id="image_upload_window" data-theme="a" data-title="Upload Image"> 
 
-   
+             
 
            
-                <p style="text-align:left;"><b>Enter the URL of an internet image</b></p>
-                <input type="text" id="url"  value=""/> 
+              <p style="text-align:left;"><b>Enter the URL of an internet image</b></p>
+
+              <input type="text" id="url"  value=""/> 
               
-                <input type="button"  id="upload_image_button" value="Upload" />
+              <br />
+            
+              
+              <b> OR</b>
+
+              <br />
+              <br />
+
+              <b>Upload an image</b>
+
+              <br />
+           
+
+              <input type="file" id="image_uploaded" accept="image/*" multiple />
+
+              <br />
+              <br />
+
+              <input type="button"  id="upload_image_button" value="Upload" />
+
 
           
 
@@ -265,7 +297,8 @@
 
 <div data-role="dialog" data-transition="pop" id="text_upload_window" data-theme="a" data-title="Upload Text"> 
 
-  
+                   
+
                 <p style="text-align:left;"><b>Enter Text</b></p>
 
                 <input type="text" id="component_text" />
@@ -278,7 +311,9 @@
 
 <div data-role="dialog" data-transition="pop" id="symbol_upload_window" data-theme="a" data-title="Upload Symbol"> 
 
-            
+              
+
+
                 <h3 style="text-align:center; padding-top:2px;">Choose Symbol</h3>
             
                 <div class="ui-grid-a">
@@ -320,20 +355,7 @@
 <div data-role="page" id="settings_page" data-theme="a" data-transition="flow" data-title="Settings"> 
 
             
-        <div data-role="header">
-        <h1>Picture That!</h1>
-        <a href="#settings_page" data-icon="gear" data-role="button">Settings</a>
-        <div data-role="navbar" data-iconpos="left">
-		<ul>
-			<li><a href="#home_page" data-role="button" data-icon="home">Home</a></li>
-            <li><a data-role="button" href="#user_search_page">New Game</a></li>
-            <li><a href="#creation_page" data-role="button" >Create Puzzle</a></li>
-            <li><a href="#" data-role="button">Current Games</a></li>
-			<li><a href="#" data-role="button">Picto-Feed</a></li>
-            
-		</ul>
-        </div> <!--Nabar-->
-      </div> <!--Header-->
+        
               
  <div data-role="content">  
             <label for="flip-1">Select slider:</label>
